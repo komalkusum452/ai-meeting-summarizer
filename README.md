@@ -1,36 +1,183 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 AI Meeting Summarizer
 
-## Getting Started
+An AI-powered meeting intelligence platform that transforms lengthy meeting transcripts into structured, actionable insights using **Google Gemini AI**.
 
-First, run the development server:
+The application helps users quickly understand meetings by generating concise summaries, extracting key decisions, identifying action items, analyzing sentiment, and organizing important discussion topics.
+
+## ✨ Features
+
+### 📝 Intelligent Meeting Analysis
+
+* Accepts meeting transcripts through:
+
+  * Direct text input
+  * `.txt` file upload
+* Uses Gemini AI to analyze conversations and extract meaningful insights.
+
+### 📌 AI Generated Summary
+
+Automatically creates an executive summary containing:
+
+* Main discussion points
+* Important highlights
+* Overall meeting context
+
+### ✅ Decision Extraction
+
+Identifies important decisions made during the meeting so users can quickly review outcomes.
+
+### 📝 Action Item Detection
+
+Extracts tasks from conversations with:
+
+* Task description
+* Assigned owner
+* Deadline (when available)
+
+### 😊 Sentiment Analysis
+
+Analyzes the overall tone of the meeting:
+
+* Positive
+* Neutral
+* Tense
+
+### 🔥 Topic Identification
+
+Detects major topics discussed during the meeting.
+
+### 💾 Meeting History
+
+* Stores previous AI analyses using Supabase
+* Allows users to revisit generated summaries later
+* Maintains transcript and structured AI output
+
+---
+
+## 🏗️ Tech Stack
+
+### Frontend
+
+* Next.js (App Router)
+* React
+* TypeScript
+* Tailwind CSS
+
+### Backend
+
+* Next.js API Routes
+* Google Gemini API
+
+### Database
+
+* Supabase PostgreSQL
+
+### Development Tools
+
+* VS Code
+* Git & GitHub
+
+---
+
+## ⚙️ How It Works
+
+```
+User uploads/pastes transcript
+              |
+              ↓
+      Next.js Frontend
+              |
+              ↓
+    API Route (/api/summarize)
+              |
+              ↓
+        Gemini AI Model
+              |
+              ↓
+ Structured meeting analysis
+              |
+              ↓
+      Supabase Database
+              |
+              ↓
+       Meeting History
+```
+
+---
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/ai-meeting-summarizer.git
+```
+
+### 2. Install dependencies
+
+```bash
+npm install
+```
+
+### 3. Create environment variables
+
+Create a `.env.local` file:
+
+```env
+GEMINI_API_KEY=your_gemini_api_key
+
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
+
+### 4. Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📂 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src
+├── app
+│   ├── api
+│   │   └── summarize
+│   │       └── route.ts
+│   │
+│   ├── history
+│   │   └── page.tsx
+│   │
+│   └── page.tsx
+│
+├── components
+│   └── Hero.tsx
+│
+└── lib
+    └── supabase.ts
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Built with:
 
-## Deploy on Vercel
+* Next.js
+* Gemini AI
+* Supabase
+* Tailwind CSS
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## ⭐ Why This Project?
+
+Traditional meeting notes require manual effort and often miss important details.
+
+This project demonstrates how Generative AI can be integrated into a full-stack application to automate information extraction, improve productivity, and create a smarter meeting workflow.
